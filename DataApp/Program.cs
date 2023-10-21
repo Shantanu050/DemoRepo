@@ -1,9 +1,11 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using System.Data.SqlClient;
 using System;
+using System.Data;
  string connectionString = "User ID=sa;password=examlyMssql@123; server=localhost;Database=db;trusted_connection=false;Persist Security Info=False;Encrypt=False";
   SqlConnection con=new SqlConnection(connectionString);
-Show();
+  //AddDisconnect();
+ShowDisconnect();
 //AddRcord();
 //DeleteRecord();
 void DeleteRecord()
@@ -68,4 +70,66 @@ catch(Exception e)
 {
     Console.WriteLine(e.Message);
 }
+}
+void ShowDisconnect()
+{
+  //con.Open();
+    string cmdText="insert into product values(@id,@name,@price,@stock)";
+    SqlDataAdapter adapter=null;
+    DataSet ds=null;
+    DataTable prodTable=null;
+
+    try
+    {
+        //con.Open();
+        ds=new DataSet();
+        adapter=new SqlDataAdapter("select * from product",con);
+        adapter.Fill(ds,"Prod");
+        prodTable=ds.Tables["Prod"];
+        Console.WriteLine($"Rows= {prodTable.Rows.Count}");
+        Console.WriteLine($"Columns= {prodTable.Columns.Count}");   
+
+        foreach(DataRow row in prodTable.Rows)
+        {
+            Console.WriteLine($"{row["id"]}---{row["name"]}--- {row["price"]}----{row["stock"]}");
+        }
+    }
+    catch(Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
+
+}
+void AddDisconnect()
+{
+     int id=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Name");
+    string name=Console.ReadLine();
+    Console.WriteLine("Price");
+    int price=Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Stock");
+    int stock=Convert.ToInt32(Console.ReadLine());
+    SqlDataAdapter adapter=null;
+    DataSet ds=null;
+    try
+    {
+        ds=new DataSet();
+        adapter=new SqlDataAdapter("select * from product",con);
+        adapter.Fill(ds,"Prod");
+        DataTable prodTable=ds.Tables["Prod"];
+        DataRow prodrow=prodTable.NewRow();
+        prodrow["id"]=id;
+        prodrow["name"]=name;
+        prodrow["price"]=price;
+        prodrow["stock"]=stock;
+        prodTable.Rows.Add(prodrow);
+        SqlCommandBuilder scb=new SqlCommandBuilder(adapter);
+        Console.WriteLine(scb.GetInsertCommand().CommandText);
+        adapter.Update(prodTable);
+        Console.WriteLine("Row added");
+    }
+    catch(Exception e)
+    {
+        Console.WriteLine(e.Message);
+    }
 }
