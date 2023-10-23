@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+namespace EmpMvc.Models
+{
 public class Product 
 {
     [Display(Name="Product ID")]
@@ -11,4 +13,5 @@ public class Product
     
     public int Price{get;set;}
     public int  Stock{get;set;}
+}
 }
