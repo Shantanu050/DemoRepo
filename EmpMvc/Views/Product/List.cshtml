@@ -15,6 +15,8 @@
             <td>@dr["Name"]</td>
             <td>@dr["Price"]</td>
             <td>@dr["Stock"]</td>
+            <td></td>
+            <td>@Html.ActionLink("Display","Display","Product",new {id=@dr["id"]})</td>
         </tr>
 
         }

@@ -1,0 +1,14 @@
+@using System.Data;
+@model DataTable;
+
+@{DataRow dr=Model.Rows[0];}
+<h2>Info of Product</h2>
+<h3>@dr["name"]</h3>
+<h3>@dr["id"]</h3>
+<h3>@dr["price"]</h3>
+<h3>@dr["stock"]</h3>
+<br>
+<br>
+<br>
+@Html.ActionLink("Back to List","List");
+<hr>
