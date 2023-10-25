@@ -1,0 +1,31 @@
+@using System.Data
+@model DataTable
+
+<h1>Product Listing</h1>
+<hr>
+<table class="table">
+    <th>Id</th>
+    <th>Name</th>
+    <th>Hindi</th>
+    <th>Maths</th>
+    <th>English</th>
+    <tbody>
+        @foreach(DataRow dr in Model.Rows)
+        {
+          <tr>
+            <td>@dr["Id"]</td>
+            <td>@dr["Name"]</td>
+            <td>@dr["Hindi"]</td>
+            <td>@dr["Maths"]</td>
+            <td>@dr["English"]</td>
+          
+          @{
+            int total=0;
+            total=Convert.ToInt32(@dr["Hindi"])+Convert.ToInt32(@dr["English"])+Convert.ToInt32(@dr["Maths"]);
+          }
+          <td>@total</td>
+          </tr>
+
+        }
+    </tbody>
+</table>
