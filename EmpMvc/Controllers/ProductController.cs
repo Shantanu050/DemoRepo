@@ -21,7 +21,7 @@ public class ProductController:Controller
   }
       public IActionResult List()
       {
-        string constr=;
+        string constr="User ID=sa;password=examlyMssql@123; server=localhost;Database=db;trusted_connection=false;Persist Security Info=False;Encrypt=False";
          
         SqlConnection con=new SqlConnection(constr);
         SqlCommand cmd=new SqlCommand("select * from product",con);

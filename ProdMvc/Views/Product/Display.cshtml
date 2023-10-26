@@ -1,0 +1,23 @@
+
+@model ProdMvc.Models.Product
+<h2>Product Details of @Model.Name</h2>
+<hr>
+<table class="table">
+<tbody>
+    <tr>
+    <td>@Html.DisplayNameFor(m=>m.Id)</td>
+    <td>@Model.Id</td>
+    </tr>
+
+        <tr>
+        <td>@Html.DisplayNameFor(m=>m.Price)</td>
+        <td>@Html.DisplayFor(m=>m.Price)</td>
+        </tr>
+
+         <tr>
+        <td>@Html.DisplayNameFor(m=>m.Stock)</td>
+        <td>@Html.DisplayFor(m=>m.Stock)</td>
+        </tr>
+</tbody>
+</table>
+@Html.ActionLink("Back to List","List");

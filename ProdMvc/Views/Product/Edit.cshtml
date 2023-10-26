@@ -1,0 +1,25 @@
+@model Product
+<h2>Editing Record</h2>
+<form method="post">
+    <label asp-for="Id"></label>
+    <input type="text" asp-for="Id" readonly>
+    <br>
+    <label asp-for="Name"></label>
+    <input type="text" asp-for="Name">
+    <span asp-validation-for="Name" style="color: red;"></span>
+    <br>
+     <label asp-for="Price"></label>
+    <input type="text" asp-for="Price">
+    <span asp-validation-for="Price" style="color: red;"></span>
+    <br>
+     <label asp-for="Stock"></label>
+    <input type="text" asp-for="Stock">
+    <span asp-validation-for="Stock" style="color: red;"></span>
+    <br>
+    <input type="submit"value="Save" style="background-color:cyan;"/>
+
+
+</form>
+<br>
+<br>
+<a asp-controller="Product" asp-action="List">Back To List</a>

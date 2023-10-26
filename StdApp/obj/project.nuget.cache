@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "Hp08vuo4dmY2TWiL+4StEFYIOsDg5IAOrIX+xq9BfgRfIdzo8h6Q7xVU9kiQpTFRvS8xKKdUMfcayKJyIIiMUA==",
+  "dgSpecHash": "AtA819Vhm+mUMI1QtUO36gVefI/abgWN7H2rxjC/GBQt0Ar2DPvARfbg3TLeJ0tPz3fMX9RcYfIyiHDYwSJQag==",
   "success": true,
   "projectFilePath": "/home/coder/project/workspace/StdApp/StdApp.csproj",
   "expectedPackageFiles": [
@@ -103,7 +103,7 @@
     "/home/coder/.nuget/packages/system.collections.immutable/1.3.1/system.collections.immutable.1.3.1.nupkg.sha512",
     "/home/coder/.nuget/packages/system.componentmodel.annotations/4.5.0/system.componentmodel.annotations.4.5.0.nupkg.sha512",
     "/home/coder/.nuget/packages/system.console/4.3.0/system.console.4.3.0.nupkg.sha512",
-    "/home/coder/.nuget/packages/system.data.sqlclient/4.8.5/system.data.sqlclient.4.8.5.nupkg.sha512",
+    "/home/coder/.nuget/packages/system.data.sqlclient/4.8.0/system.data.sqlclient.4.8.0.nupkg.sha512",
     "/home/coder/.nuget/packages/system.diagnostics.debug/4.3.0/system.diagnostics.debug.4.3.0.nupkg.sha512",
     "/home/coder/.nuget/packages/system.diagnostics.diagnosticsource/4.5.0/system.diagnostics.diagnosticsource.4.5.0.nupkg.sha512",
     "/home/coder/.nuget/packages/system.diagnostics.fileversioninfo/4.3.0/system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512",
