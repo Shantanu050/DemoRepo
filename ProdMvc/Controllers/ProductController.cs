@@ -59,6 +59,22 @@ namespace ProdMvc.Controllers
             }
              return View();
         }
+        public IActionResult Delete(int id)
+        {
+            var data=context.Product.Find(id);
+            return View(data);
+        }
 
+        [HttpPost]
+        public IActionResult Delete(Product prod)
+        {
+            Product product=context.Product.Find(prod.Id);
+            context.Product.Remove(product);
+            context.SaveChanges();
+            return RedirectToAction("List");
+            return View();
+            
+        }
+       
     }
 }

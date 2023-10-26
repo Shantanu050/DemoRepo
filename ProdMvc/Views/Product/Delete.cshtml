@@ -1,0 +1,11 @@
+@model Product
+<h2>Deleteing record of @Model.Name</h2>
+<p>@Html.DisplayNameFor(m=>m.Id): @Html.DisplayFor(m=>m.Id)</p>
+<p>@Html.DisplayNameFor(m=>m.Price): @Html.DisplayFor(m=>m.Price)</p>
+<p>@Html.DisplayNameFor(m=>m.Stock): @Html.DisplayFor(m=>m.Stock)</p>
+<hr>
+@using (Html.BeginForm())
+{
+    <input type="submit" value="Delete ?" style="background-color:red;">
+}
+@Html.ActionLink("Back to List","List");
