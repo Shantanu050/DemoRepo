@@ -3,13 +3,15 @@
 <div>
     <table class="table"></table>
         <th>@Html.DisplayNameFor(m=>m.Id)</th>
-        <th>@Html.DisplayNameFor(m=>m.DeptName</th>
-        <th>@Html.DisplayNameFor(m=>m.Location/th>
+        <th>@Html.DisplayNameFor(m=>m.DeptName)</th>
+        <th>@Html.DisplayNameFor(m=>m.Location)</th>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
                     <td>@item.Id</td>
+                    <td>@item.DeptName</td>
+                    <td>@item.Location</td>
                 </tr>
             }
         </tbody>        
