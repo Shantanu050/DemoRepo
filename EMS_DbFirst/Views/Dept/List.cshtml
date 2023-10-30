@@ -18,9 +18,9 @@
                     <td>@item.Location</td>
                     <td></td>
                     <td>
-                        @Html.ActionLink("Details","List","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
-                        @Html.ActionLink("","List","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
-                        @Html.ActionLink("Details","List","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink("Details","Display","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink("Edit","Edit","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink("Details","Delete","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
                     </td>
                 </tr>
             }
