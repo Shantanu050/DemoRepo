@@ -1,7 +1,9 @@
 @model IEnumerable<EMS_DbFirst.Models.Department>
-<h3>Department List</h3>
-<div>
-    <table class="table"></table>
+<div class="container">
+<h1>Department List</h1>
+<h3>@Html.ActionLink("Add Department","Create")</h3>
+<br>
+    <table class="table table-bordered">
         <th>@Html.DisplayNameFor(m=>m.Id)</th>
         <th>@Html.DisplayNameFor(m=>m.DeptName)</th>
         <th>@Html.DisplayNameFor(m=>m.Location)</th>
