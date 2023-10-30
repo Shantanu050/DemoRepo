@@ -1,1 +1,17 @@
+@model IEnumerable<EMS_DbFirst.Models.Department>
 <h3>Department List</h3>
+<div>
+    <table class="table"></table>
+        <th>@Html.DisplayNameFor(m=>m.Id)</th>
+        <th>@Html.DisplayNameFor(m=>m.DeptName</th>
+        <th>@Html.DisplayNameFor(m=>m.Location/th>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                </tr>
+            }
+        </tbody>        
+    </table>
+</div>
