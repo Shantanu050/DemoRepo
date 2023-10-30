@@ -4,9 +4,11 @@
 <h3>@Html.ActionLink("Add Department","Create")</h3>
 <br>
     <table class="table table-bordered">
+        <thead>
         <th>@Html.DisplayNameFor(m=>m.Id)</th>
         <th>@Html.DisplayNameFor(m=>m.DeptName)</th>
         <th>@Html.DisplayNameFor(m=>m.Location)</th>
+        </thead>
         <tbody>
             @foreach (var item in Model)
             {
@@ -14,6 +16,12 @@
                     <td>@item.Id</td>
                     <td>@item.DeptName</td>
                     <td>@item.Location</td>
+                    <td></td>
+                    <td>
+                        @Html.ActionLink("Details","List","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink("","List","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
+                        @Html.ActionLink("Details","List","Dept",new{id=item.Id}) &nbsp;&nbsp;&nbsp;
+                    </td>
                 </tr>
             }
         </tbody>        
