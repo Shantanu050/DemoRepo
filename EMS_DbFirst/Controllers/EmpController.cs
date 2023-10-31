@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using EMS_DbFirst.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 namespace EMS_DbFirst.Controllers
 {
     public class EmpController:Controller
@@ -30,7 +31,7 @@ namespace EMS_DbFirst.Controllers
             context.SaveChanges();
             return RedirectToAction("List");
             }
-            ViewBag.DeptId=SelectList(context.Departments,"Id","DeptName");
+            ViewBag.DeptId= new SelectList(context.Departments,"Id","DeptName");
             return View(e);
         }
 

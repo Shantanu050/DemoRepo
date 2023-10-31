@@ -1,1 +1,24 @@
+@model IEnumerable<Employee>
 <h3>Employee List</h3>
+<hr>
+<div style="text-align:right;">
+<a asp-controller="Emp" asp-action="Create">Add Employee</a>
+</div>
+<table class="table">
+    <thead>
+        <th>@Html.DisplayNameFor(e=>e.EmpId)</th>
+        <th>@Html.DisplayNameFor(e=>e.Name)</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.EmpId</td>
+                <td>@item.Name</td>
+                <td>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
