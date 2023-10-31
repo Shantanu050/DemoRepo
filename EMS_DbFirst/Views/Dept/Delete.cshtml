@@ -1,0 +1,22 @@
+@model Department
+@using (Html.BeginForm())
+{
+    @Html.DisplayNameFor(m=>m.Id)
+    <br>
+    @Html.DisplayFor(m=>m.Id)
+     <br>
+     <br>
+
+    @Html.DisplayNameFor(m=>m.DeptName)
+    <br>
+    @Html.DisplayFor(m=>m.DeptName)
+    <br>
+    <br>
+    @Html.DisplayNameFor(m=>m.Location)
+    <br>
+    @Html.DisplayFor(m=>m.Location)
+    <br>
+    <br>
+    <input type="submit" value="Delete" class="btn btn-danger"/>
+}
+@Html.ActionLink("Back to List","List")

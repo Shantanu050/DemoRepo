@@ -1,0 +1,19 @@
+@model Department
+@using(Html.BeginForm())
+{
+    @Html.DisplayNameFor(m=>m.DeptName)
+    <br>
+    @Html.EditorFor(m=>m.DeptName)
+     <br>
+     <br>
+    @Html.DisplayNameFor(m=>m.Location)
+    <br>
+    @Html.EditorFor(m=>m.Location)
+    <br>
+    <br>
+
+    <input type="submit" value="Edit" class="btn btn-primary"/>
+
+    
+}
+@Html.ActionLink("Back to List","List")

@@ -15,6 +15,18 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = /home/coder/project/workspace/EMS_DbFirst
 build_property._RazorSourceGeneratorDebug = 
 
+[/home/coder/project/workspace/EMS_DbFirst/Views/Dept/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9DcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/coder/project/workspace/EMS_DbFirst/Views/Dept/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9EZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/coder/project/workspace/EMS_DbFirst/Views/Dept/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9FZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/coder/project/workspace/EMS_DbFirst/Views/Dept/List.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9MaXN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

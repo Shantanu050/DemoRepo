@@ -1,0 +1,25 @@
+@model Department
+<h2>Adding Department</h2>
+<hr>
+@using(Html.BeginForm())
+{
+    <div class="form-horizonal">
+        @Html.ValidationSummary(false,"",new {@class="text-danger"})
+        <div class="form-group">
+            @Html.DisplayNameFor(d=>d.DeptName)
+            @Html.EditorFor(d=>d.DeptName)
+        </div>
+        <br>
+        <div class="form-group">
+            @Html.DisplayNameFor(d=>d.Location)
+            @Html.EditorFor(d=>d.Location)
+        </div>
+       
+    </div>
+    <br>
+    <br>
+    <input type="submit" value="Add" class="btn btn-primary"/>
+
+}
+<br>
+@Html.ActionLink("Back","List")

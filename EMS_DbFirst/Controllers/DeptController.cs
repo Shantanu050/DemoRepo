@@ -11,7 +11,18 @@ namespace EMS_DbFirst.Controllers
        }
         public IActionResult List()
         {
-            var data=context.Departments.ToList();
+            List<Department>data=null;
+            try{
+
+                data=context.Departments.ToList();
+                if(data.Count==0)
+                throw new Exception();
+            }
+            catch(System.Exception)
+            {
+                ViewBag.ErrorMessage="No records present";
+                return View("Error");
+            }
             return View(data);
         }
 
@@ -31,5 +42,34 @@ namespace EMS_DbFirst.Controllers
             }
             return View();
         }
+        public IActionResult Edit(int id)
+        {
+            var data=context.Departments.Find(id);
+            return View(data);
+        }
+        [HttpPost]
+        public IActionResult Edit(Department p)
+        {
+            Department dept=context.Departments.Find(p.Id);
+            dept.DeptName=p.DeptName;
+            dept.Location=p.Location;
+            context.SaveChanges();
+            return RedirectToAction("List");
+        }
+        public IActionResult Delete(int id)
+        {
+            var data=context.Departments.Find(id);
+            return View(data);
+        }
+        [HttpPost]
+        public IActionResult Delete(Department dept)
+        {
+            Department dept1=context.Departments.Find(dept.Id);
+            context.Departments.Remove(dept1);
+            context.SaveChanges();
+            return RedirectToAction("List");
+        }
+
+
     }
 }
