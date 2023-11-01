@@ -23,6 +23,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9EZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/coder/project/workspace/EMS_DbFirst/Views/Dept/Display.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9EaXNwbGF5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/coder/project/workspace/EMS_DbFirst/Views/Dept/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGVwdC9FZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,6 +37,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [/home/coder/project/workspace/EMS_DbFirst/Views/Emp/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wL0NyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/home/coder/project/workspace/EMS_DbFirst/Views/Emp/Display.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRW1wL0Rpc3BsYXkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [/home/coder/project/workspace/EMS_DbFirst/Views/Emp/List.cshtml]

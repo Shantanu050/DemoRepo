@@ -8,6 +8,8 @@
     <thead>
         <th>@Html.DisplayNameFor(e=>e.EmpId)</th>
         <th>@Html.DisplayNameFor(e=>e.Name)</th>
+        <th>@Html.DisplayNameFor(e=>e.Dept.DeptName)</th>
+        <th>@Html.DisplayNameFor(e=>e.Dept.Location)</th>
     </thead>
     <tbody>
         @foreach (var item in Model)

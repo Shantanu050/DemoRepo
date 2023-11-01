@@ -70,6 +70,12 @@ namespace EMS_DbFirst.Controllers
             return RedirectToAction("List");
         }
 
+        public IActionResult Display(int id)
+        {
+            var data=context.Employees.Where(i=>i.DeptId==id);
+            return View(data);
+        }
+
 
     }
 }

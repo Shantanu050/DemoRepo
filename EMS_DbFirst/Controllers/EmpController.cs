@@ -31,8 +31,12 @@ namespace EMS_DbFirst.Controllers
             context.SaveChanges();
             //context.Update(e);
             return RedirectToAction("List");
-            
            
+        }
+        public IActionResult Display(int id)
+        {
+            var data=context.Employees.Find(id);
+            return View(data);
         }
 
         
