@@ -80,3 +80,11 @@
 /home/coder/project/workspace/EMS_DbFirst/obj/Debug/net6.0/EMS_DbFirst.pdb
 /home/coder/project/workspace/EMS_DbFirst/obj/Debug/net6.0/EMS_DbFirst.genruntimeconfig.cache
 /home/coder/project/workspace/EMS_DbFirst/obj/Debug/net6.0/ref/EMS_DbFirst.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Microsoft.AspNetCore.JsonPatch.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Microsoft.AspNetCore.Razor.Language.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Microsoft.CodeAnalysis.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Microsoft.CodeAnalysis.CSharp.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Microsoft.CodeAnalysis.Razor.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Newtonsoft.Json.dll
+/home/coder/project/workspace/EMS_DbFirst/bin/Debug/net6.0/Newtonsoft.Json.Bson.dll

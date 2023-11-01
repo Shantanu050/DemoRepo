@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using EMS_DbFirst.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 namespace EMS_DbFirst.Controllers
 {
     public class EmpController:Controller
@@ -13,7 +14,7 @@ namespace EMS_DbFirst.Controllers
        
         public IActionResult List()
         {
-            var data=context.Employees.ToList();
+            var data=context.Employees.Include("Dept").ToList();
             return View(data);
         }
 
@@ -25,14 +26,13 @@ namespace EMS_DbFirst.Controllers
         [HttpPost]
         public IActionResult Create(Employee e)
         {
-            if(ModelState.IsValid)
-            {
+           
             context.Employees.Add(e);
             context.SaveChanges();
+            //context.Update(e);
             return RedirectToAction("List");
-            }
-            ViewBag.DeptId= new SelectList(context.Departments,"Id","DeptName");
-            return View(e);
+            
+           
         }
 
         

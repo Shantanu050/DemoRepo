@@ -15,8 +15,10 @@
             <tr>
                 <td>@item.EmpId</td>
                 <td>@item.Name</td>
+                <td>@item.Dept.DeptName</td>
+                <td>@item.Dept.Location</td>
                 <td>
-                    
+                    <a asp-controller="Emp" asp-action="Display" asp-route-id=item.EmpId>Display</a>
                 </td>
             </tr>
         }
