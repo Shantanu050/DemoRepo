@@ -17,9 +17,8 @@ namespace MovieApp.Controllers
         [Route("ListDetails")]
         public IActionResult Get()
         {
-            var data=context.Details.Include("Movie");
-            var data1=data.Select(i=>new {i.Name,i.Actor,i.Role});
-            return Ok(data1);
+            var data=from i in context.Details select new{i.Movie.Name,i.Actor,i.Role};
+            return Ok(data);
         }
 
         [HttpGet]
@@ -28,7 +27,7 @@ namespace MovieApp.Controllers
         {
             if(id==null)
             return BadRequest("Id cannot be null");
-            var data=from i in context.Details select new{i=>i.Actor,}
+            var data=from i in context.Details where i.MovieId==id select new{i.Actor,i.Role,i.Movie.Name,i.Movie.YearRelease};
             if(data==null)
             return NotFound("Id "+id+" is not present");
             return Ok(data);
