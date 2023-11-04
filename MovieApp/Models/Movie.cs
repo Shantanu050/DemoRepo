@@ -11,6 +11,6 @@ namespace MovieApp.Models
         public string Name{get;set;}
         public int YearRelease{get;set;}
         public int Rating{get;set;}
-        public ICollection<Detail>Detail{get;set;}
+        public ICollection<Detail>?Detail{get;set;}
     }
 }
