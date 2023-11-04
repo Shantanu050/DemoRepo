@@ -33,6 +33,19 @@ namespace MovieApp.Controllers
             return Ok(data);
         }
 
+        [HttpPost]
+        [Route("AddDetails")]
+        public IActionResult Post(Detail detail)
+        {
+           if(ModelState.IsValid)
+           {
+            context.Details.Add(detail);
+            context.SaveChanges();
+            return Created("Record added",detail);
+           }
+           return BadRequest("Data is not valid");
+        }
+
         
 
       
