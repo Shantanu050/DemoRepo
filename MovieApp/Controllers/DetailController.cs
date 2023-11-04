@@ -18,35 +18,23 @@ namespace MovieApp.Controllers
         public IActionResult Get()
         {
             var data=context.Details.Include("Movie");
-            var data1=data.Select(i=>new })
-            return Ok(data);
+            var data1=data.Select(i=>new {i.Name,i.Actor,i.Role});
+            return Ok(data1);
         }
 
         [HttpGet]
-        [Route("ListDetails/{id}")]
+        [Route("MovieDetails/{id}")]
         public IActionResult Get(int id)
         {
             if(id==null)
             return BadRequest("Id cannot be null");
-            var data=context.Details.Find(id);
+            var data=from i in context.Details select new{i=>i.Actor,}
             if(data==null)
             return NotFound("Id "+id+" is not present");
             return Ok(data);
         }
 
-        [HttpPost]
-        [Route("AddDetails")]
-        public IActionResult Post(Detail detail)
-        {
-          if(ModelState.IsValid)
-          {
-            context.Details.Add(detail);
-            context.SaveChanges();
-            return Created("Record added");
-          }
-          return BadRequest("Record not adeed");
-          
-        }
+        
 
       
     }
