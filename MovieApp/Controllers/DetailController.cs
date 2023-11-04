@@ -17,7 +17,8 @@ namespace MovieApp.Controllers
         [Route("ListDetails")]
         public IActionResult Get()
         {
-            var data1=
+            var data=context.Details.Include("Movie");
+            var data1=data.Select(i=>new })
             return Ok(data);
         }
 
