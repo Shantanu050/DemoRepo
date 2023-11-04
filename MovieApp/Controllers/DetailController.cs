@@ -17,7 +17,7 @@ namespace MovieApp.Controllers
         [Route("ListDetails")]
         public IActionResult Get()
         {
-            var data=context.Details.ToList();
+            var data1=
             return Ok(data);
         }
 
@@ -47,7 +47,6 @@ namespace MovieApp.Controllers
           
         }
 
-        [HttpPut]
-        [Route("EditDeails/{id}")]
+      
     }
 }
