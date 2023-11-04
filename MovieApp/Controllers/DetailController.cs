@@ -13,13 +13,12 @@ namespace MovieApp.Controllers
     public class DetailController:ControllerBase
     {
         MovieContext context=new MovieContext();
-          [HttpGet]
+        [HttpGet]
         [Route("ListDetails")]
         public IActionResult Get()
         {
-            //var data=context.Details.ToList();
-               var data=from m in context.Details select m;
-               return Ok(data);
+            var data=context.Details.ToList();
+            return Ok(data);
         }
 
         [HttpGet]
@@ -27,73 +26,28 @@ namespace MovieApp.Controllers
         public IActionResult Get(int id)
         {
             if(id==null)
-            {
             return BadRequest("Id cannot be null");
-            }
-            var data=(from m in context.Details where m.Id==id select m).FirstOrDefault();
+            var data=context.Details.Find(id);
             if(data==null)
-            {
-                return NotFound($"Movie {id} not found");
-            }
+            return NotFound("Id "+id+" is not present");
             return Ok(data);
         }
 
         [HttpPost]
-        [Route("AddMovie")]
-        public IActionResult Post(Movie movie)
+        [Route("AddDetails")]
+        public IActionResult Post(Detail detail)
         {
-            if(ModelState.IsValid)
-            {
-                try
-                {
-                   context.Details.Add(movie);
-                   context.SaveChanges();
-                }
-                catch(Exception e)
-                {
-                    return BadRequest(e.InnerException.Message);
-                }
-
-            }
-            return Created("Record Added",movie);
+          if(ModelState.IsValid)
+          {
+            context.Details.Add(detail);
+            context.SaveChanges();
+            return Created("Record added");
+          }
+          return BadRequest("Record not adeed");
+          
         }
 
         [HttpPut]
-        [Route("EditMovie/{id}")]
-        public IActionResult Put(int id,Movie movie)
-        {
-           if(ModelState.IsValid)
-           {
-            Movie omovie=context.Details.Find(id);
-            omovie.Name=movie.Name;
-            omovie.Rating=movie.Rating;
-            omovie.YearRelease=movie.YearRelease;
-            context.SaveChanges();
-            return Ok();
-           }
-           return BadRequest("Unable to edit record");
-        }
-
-        [HttpDelete]
-        [Route("Delete/{id}")]
-        public IActionResult Delete(int id)
-        {
-          try
-          {
-             var detail=context.Details.Where(d=>d.MovieId==id);
-             if(detail.Count()!=0)
-             {
-                throw new Exception("Cannot Delete Movie");
-             }
-             var data=context.Details.Find(id);
-             context.Details.Remove(data);
-             context.SaveChanges();
-             return Ok();
-          }
-          catch(Exception e)
-          {
-            return BadRequest(e.Message);
-          }
-        }
+        [Route("EditDeails/{id}")]
     }
 }
