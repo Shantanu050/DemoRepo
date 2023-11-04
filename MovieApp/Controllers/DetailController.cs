@@ -17,7 +17,7 @@ namespace MovieApp.Controllers
         [Route("ListDetails")]
         public IActionResult Get()
         {
-            var data=from i in context.Details select new{i.Movie.Name,i.Actor,i.Role};
+            var data=from i in context.Details select new{i.DetailId,i.MovieId,i.Movie.Name,i.Actor,i.Role};
             return Ok(data);
         }
 
@@ -46,6 +46,32 @@ namespace MovieApp.Controllers
            return BadRequest("Data is not valid");
         }
 
+        [HttpPut]
+        [Route("EditDetails/{id}")]
+        public IActionResult Put(int id, Detail detail)
+        {
+            if(ModelState.IsValid)
+            {
+             Detail d=context.Details.Find(id);
+             d.Actor=detail.Actor;
+             d.MovieId=detail.MovieId;
+             d.Role=detail.Role;
+             d.Gender=detail.Gender;
+             context.SaveChanges();
+             return Ok();
+            }
+            return BadRequest("Unable to edit");
+        }
+        
+        [HttpDelete]
+        [Route("DeleteDetails/{id}")]
+        public IActionResult Delete(int id)
+        {
+           var data=context.Details.Find(id);
+           context.Details.Remove(data);
+           context.SaveChanges();
+           return Ok();
+        }
         
 
       
