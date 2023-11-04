@@ -52,9 +52,11 @@ namespace MovieApp.Controllers
                 }
                 catch(Exception e)
                 {
-                    return BadRequest(e.InnerException)
+                    return BadRequest(e.InnerException.Message);
                 }
+
             }
+            return Created("Record Added",movie);
         }
 
     }
