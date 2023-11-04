@@ -79,12 +79,22 @@ namespace MovieApp.Controllers
         [Route("Delete/{id}")]
         public IActionResult Delete(int id)
         {
-          if(ModelState.IsValid)
-           {
-            Movie omovie=context.Movies.Find(id);
-            context.Movies.Remove(omovie);
-            con
-           }
+          try
+          {
+             var detail=context.Details.Where(d=>d.MovieId==id);
+             if(detail.Count()!=0)
+             {
+                throw new Exception("Cannot Delete Movie");
+             }
+             var data=context.Movies.Find(id);
+             context.Movies.Remove(data);
+             context.SaveChanges();
+             return Ok();
+          }
+          catch(Exception e)
+          {
+            return BadRequest(e.Message);
+          }
         }
 
     }
