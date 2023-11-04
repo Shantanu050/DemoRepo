@@ -25,3 +25,5 @@
 /home/coder/project/workspace/MovieApp/obj/Debug/net6.0/MovieApp.pdb
 /home/coder/project/workspace/MovieApp/obj/Debug/net6.0/MovieApp.genruntimeconfig.cache
 /home/coder/project/workspace/MovieApp/obj/Debug/net6.0/ref/MovieApp.dll
+/home/coder/project/workspace/MovieApp/obj/Debug/net6.0/MovieApp.RazorAssemblyInfo.cache
+/home/coder/project/workspace/MovieApp/obj/Debug/net6.0/MovieApp.RazorAssemblyInfo.cs
