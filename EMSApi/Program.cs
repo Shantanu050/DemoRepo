@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<EmsdbContext>(options=>options.UseSqlServer(builder.Configuration.GetConnectionString("mycon")));
-builder.Services.AddTransient<Ide>
+builder.Services.AddTransient<IDept,DepartmentRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
