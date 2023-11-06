@@ -33,5 +33,28 @@ namespace EMSApi.Controllers
         }
         return BadRequest();
       }
+
+      [HttpGet]
+      [Route("ListDept/{id}")]
+      public IActionResult GetDept(int id)
+      {
+        var data=repo.FindDept(id);
+        return Ok(data);
+      }
+
+      [HttpPut]
+      [Route("EditDept/{id}")]
+      public IActionResult PutDept(int id , Department dept)
+      {
+        repo.EditDept(dept);
+        return Ok();
+      }
+
+      [HttpDelete]
+      [Route("DeleteDept/{id}")]
+      public IActionResult DeleteDept(int id)
+      {
+        
+      }
     }
 }
