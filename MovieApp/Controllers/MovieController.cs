@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using System.Linq;
 using System;
+using MovieApp.ViewModel;
 //using Swashbuckle.AspNetCore;
 
 namespace MovieApp.Controllers
@@ -13,7 +14,13 @@ namespace MovieApp.Controllers
     public  class MovieController:ControllerBase
     {
         MovieContext context=new MovieContext();
-        [Http]
+        [HttpGet]
+        [Route("ShowMovies")]
+        public IActionResult GetShowMovies()
+        {
+            var data=context.Movie_VMs.FromSqlInterpolated<Movie_VM>($"MovieInfo");
+            return Ok(data);
+        }
 
         [HttpGet]
         [Route("DisplayMovies/Rating/Year")]
