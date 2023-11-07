@@ -15,6 +15,18 @@ namespace MovieApp.Controllers
         MovieContext context=new MovieContext();
 
         [HttpGet]
+        [Route("DisplayMovies/{Rating}/{Year}")]
+        public IActionResult GetDisplayMovies(int rating,int year)
+        {
+           var data=from movie in context.Movies where movie.YearRelease==year && movie.Rating==rating select movie;
+           if(data.Count()==0)
+           {
+            return NotFound("No movies found");
+           }
+           return Ok(data);
+        }
+
+        [HttpGet]
         [Route("ListMovies")]
         public IActionResult Get()
         {
