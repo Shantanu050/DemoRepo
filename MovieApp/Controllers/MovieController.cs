@@ -13,6 +13,7 @@ namespace MovieApp.Controllers
     public  class MovieController:ControllerBase
     {
         MovieContext context=new MovieContext();
+        [Http]
 
         [HttpGet]
         [Route("DisplayMovies/Rating/Year")]
