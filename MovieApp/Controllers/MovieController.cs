@@ -15,7 +15,7 @@ namespace MovieApp.Controllers
         MovieContext context=new MovieContext();
 
         [HttpGet]
-        [Route("DisplayMovies/{Rating}/{Year}")]
+        [Route("DisplayMovies/Rating/Year")]
         public IActionResult GetDisplayMovies(int rating,int year)
         {
            var data=from movie in context.Movies where movie.YearRelease==year && movie.Rating==rating select movie;
@@ -26,6 +26,18 @@ namespace MovieApp.Controllers
            return Ok(data);
         }
 
+        [HttpGet]
+        [Route("DisplayRating")]
+        public IActionResult GetDisplayRating([FromQuery] int rating )
+        {
+            var data=context.Movies.Where(m=>m.Rating==rating);
+           if(data.Count()==0)
+           {
+            return NotFound("No movies found");
+           }
+           return Ok(data);
+
+        }
         [HttpGet]
         [Route("ListMovies")]
         public IActionResult Get()
