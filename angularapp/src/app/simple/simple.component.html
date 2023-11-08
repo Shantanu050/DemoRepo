@@ -2,3 +2,10 @@
 <ul *ngFor="let day of weekdays; let i=index">
 <li>{{i+1}}---{{day}}</li>
 </ul>
+
+<ng-container *ngIf="age>=26;else elseTemplate">
+<b>Suitable for marriage</b>
+</ng-container>
+<ng-template #elseTemplate>
+    <u>Not Ready</u>
+</ng-template>
