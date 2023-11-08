@@ -9,3 +9,13 @@
 <ng-template #elseTemplate>
     <u>Not Ready</u>
 </ng-template>
+<hr>
+<ul *ngFor="let day of weekdays">
+<ng-container *ngIf="(day=='sunday'|| day=='saturday');else elseTemp">
+<li style="color: red;">{{day}} is weekend</li>
+</ng-container>
+
+<ng-template #elseTemp>
+    <li style="color: blue;">{{day}} is working day</li>
+</ng-template>
+</ul>
