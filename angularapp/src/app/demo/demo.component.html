@@ -12,3 +12,8 @@ Add={{90+30}}
 <h2>Property Binding</h2>
 <input type="text" [value]="name">
 <input type="button" [value]="name">
+<h3>Two way binding</h3>
+<input type="text" [value]="city" readonly><br>
+<input type="text" [(ngModel)]="city">
+<p>{{city}}</p>
+

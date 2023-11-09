@@ -9,6 +9,7 @@ export class DemoComponent implements OnInit {
 
   name:string="Tom"
   age:number=30
+  city:string="Mumbai"
   fno:number=49
   sno:number=50
   Sum():number
