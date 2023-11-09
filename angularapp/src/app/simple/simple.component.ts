@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Employee } from '../employee';
 
 @Component({
   selector: 'app-simple',
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class SimpleComponent implements OnInit {
 weekdays:string[]=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 age:number=30
+emp:Employee=(id:1,name:'Tom',salary:40000,city:'Pune')
   constructor() { }
 
   ngOnInit() {
