@@ -2,9 +2,13 @@
 Name is {{name}}<br>
 Age is {{age}}
 <br>
+<input type="button" [value]="name" [disabled]="age>40? false:true">
 Add={{90+30}}
 <p>{{age>25?'Eligible':'Not Eligible'}}</p>
 <p>Sum={{Sum()}}</p>
 <hr>
 <h2>Event Binding</h2>
 <input type="button" value="Click" (click)="Show()"/>
+<h2>Property Binding</h2>
+<input type="text" [value]="name">
+<input type="button" [value]="name">
