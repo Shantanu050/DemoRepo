@@ -16,6 +16,15 @@ emplist:Employee[]=[
   {id:3,name:'Shantanu',salary:40000,city:'Pune'},
   {id:4,name:'Rhyth',salary:40000,city:'Mumbai'},
 ]
+GetTotal():number
+{
+  var total:number=0;
+  for(let i of this.emplist)
+  {
+    total+=i.salary;
+  }
+  return total
+}
   constructor() { }
 
   ngOnInit() {
