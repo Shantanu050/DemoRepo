@@ -9,6 +9,8 @@ export class DemoComponent implements OnInit {
 
   name:string="Tom"
   age:number=30
+  fno:number
+  sno:nukber
   constructor() { }
 
   ngOnInit() {
