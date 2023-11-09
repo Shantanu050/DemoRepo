@@ -9,7 +9,8 @@ import { Employee } from '../employee';
 export class SimpleComponent implements OnInit {
 weekdays:string[]=['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
 age:number=30
-emp:Employee=(id:1,name:'Tom',salary:40000,city:'Pune')
+emp:Employee={id:1,name:'Tom',salary:40000,city:'Pune'}
+emplist:EM
   constructor() { }
 
   ngOnInit() {
