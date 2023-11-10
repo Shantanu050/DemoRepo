@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.SqlServer;
 
 namespace Retest.Models
 {
-    public class RetestDbContext:DbContext
+    public class RetestDbContezt:DbContext
     {
         public virtual DbSet<Employee>Employees{get;set;}
         public virtual DbSet<Department>Departments{get;set;}

@@ -27,11 +27,36 @@ namespace Retest.Controllers
             return RedirectToAction("Index");
         }
 
+       public IActionResult Edit(int id)
+       {
+          var data=context.Employees.Find(id);
+          return View(data);
+       }
+       [HttpPost]
         public IActionResult Edit(Employee emp)
         {
             Employee e=context.Employees.Find(emp.Id);
-            e.EmpName=
+            e.EmpName=emp.EmpName;
+            e.DeptId=emp.DeptId;
+            e.Email=emp.Email;
+            context.SaveChanges();
+            return RedirectToAction("Index");
         }
+      public IActionResult Delete(int id)
+       {
+          var data=context.Employees.Find(id);
+          return View(data);
+       }
+
+       [HttpPost]
+       public IActionResult Delete(Employee e)
+       {
+        Employee emp=context.Employees.Find(e.Id);
+        context.Employees.Remove(emp);
+        context.SaveChanges();
+       }
+
+
 
     }
 }
