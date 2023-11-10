@@ -1,8 +1,13 @@
+using Retest.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-
+var con=builder.Configuration.GetConnectionString("DevString");
+builder.Services.AddDbContext<RetestDbContezt>(options=>options.UseSqlServer(con));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -13,7 +13,8 @@ namespace Retest.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            var data=context.Employees;
+            return View(data);
         }
         public IActionResult Create()
         {
