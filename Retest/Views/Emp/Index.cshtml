@@ -1,4 +1,22 @@
 @model IEnumerable<Employee>
 <table class="table">
-    
+    <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>DeptID</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.EmpName</td>
+                <td>@item.DeptId</td>
+                <td>@item.Email</td>
+                <td>@Html.ActionLink("Delete","Emp","Delete",new {id=item.Id})</td>
+                <td>@Html.ActionLink("Edit","Emp","Edit",new {id=item.Id})</td>
+            </tr>
+        }
+    </tbody>
 </table>
