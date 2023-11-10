@@ -54,6 +54,8 @@ namespace Retest.Controllers
         Employee emp=context.Employees.Find(e.Id);
         context.Employees.Remove(emp);
         context.SaveChanges();
+        return RedirectToAction("Index");
+
        }
 
 
