@@ -43,3 +43,9 @@ City:{{emp.city}}<br>
 </table>
 <br>
 <b> Total salary: {{GetTotal()}}</b>
+<p>Date without pipe: {{todayDate}}</p>
+<p>Date with pipe: {{todayDate | date}}</p>
+<p> Full Date with pipe: {{todayDate | date:'Fulldate'}}</p>
+<p> Medium Date with pipe: {{todayDate | date:'short'>}}</p>
+<p> Medium Date with pipe: {{todayDate | date:'medium'>}}</p>
+<p> Time: {{todayDate | date:'hh:mm:ss'>}}</p>

@@ -25,6 +25,7 @@ GetTotal():number
   }
   return total
 }
+todayDate:number=Date.now();
   constructor() { }
 
   ngOnInit() {
