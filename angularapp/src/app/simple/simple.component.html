@@ -35,9 +35,9 @@ City:{{emp.city}}<br>
     <tbody>
         <tr *ngFor="let emp of emplist">
             <td>{{emp.id}}</td>
-            <td>{{emp.name}}</td>
-            <td>{{emp.salary}}</td>
-            <td>{{emp.city}}</td>
+            <td>{{emp.name | uppercase}}</td>
+            <td>{{emp.salary | currency:'INR'}}</td>
+            <td>{{emp.city| lowercase}}</td>
         </tr>
     </tbody>
 </table>
