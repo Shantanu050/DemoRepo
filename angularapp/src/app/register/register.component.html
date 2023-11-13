@@ -3,7 +3,8 @@
 <form #stdForm="ngForm" (ngSubmit)="RegisterStudent(stdForm)">
     <div>
         <label for="firstname">First Name</label>
-        <input id="firstname" name="firstname" type="text" ngModel>
+        <input id="firstname" name="firstname" type="text" ngModel required>
+        
     </div>
 
     <div>
