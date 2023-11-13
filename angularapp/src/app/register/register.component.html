@@ -1,3 +1,8 @@
 <h1>Student Registration Form</h1>
 <hr>
-<form #stdForm="ngForm" 
+<form #stdForm="ngForm" (ngSubmit)="RegisterStudent(stdForm)">
+    <div>
+        <label for="firstname">First Name</label>
+        <input id="firstname" name="firstname" type="text" ngModel>
+    </div>
+</form>
