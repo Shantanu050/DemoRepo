@@ -8,6 +8,7 @@ import { DemoComponent } from './demo/demo.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { EmpComponent } from './emp/emp.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { EmpComponent } from './emp/emp.component';
     EmpComponent
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule

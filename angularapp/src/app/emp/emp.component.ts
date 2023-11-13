@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
+import { FormGroup,FormControl,Validator } from '@angular/forms';
 
 @Component({
   selector: 'app-emp',
@@ -7,8 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmpComponent implements OnInit {
 
-  constructor() { }
+  constructor(private formbuilder:FormBuilder) 
+  { 
 
+  }
+  empform=this.formbuilder.group({
+    firstname:[''],
+    age['']
+  })
   ngOnInit() {
   }
 
