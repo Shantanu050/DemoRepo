@@ -12,6 +12,7 @@ export class RegisterComponent implements OnInit {
 RegisterStudent(stdForm:NgForm):void
 {
   console.log(stdForm.value)
+  console.log(stdForm.value.firstname)
 }
   ngOnInit() {
   }

@@ -20,6 +20,22 @@
         <label>Gender</label>
         <input type="radio" name="gender" value="male" checked [(ngModel)]="gender">Male
         <input type="radio" name="gender" value="female" [(ngModel)]="gender">Female
+    </div>
 
+    <div>
+        <input type="checkbox" id="ismarried" name="ismarried" [(ngModel)]="ismarried">Married
+    </div>
+
+    <div>
+        <label for="city">City</label>
+        <select id="city" name="city" [(ngModel)]="CityId">
+            <option value="1">Mumbai</option>
+            <option value="2">Pune</option>
+            <option value="3">Chennai</option>
+            <option value="4">Delhi</option>
+        </select>
+    </div>
+    <div>
+        <input type="submit" value="Save">
     </div>
 </form>
