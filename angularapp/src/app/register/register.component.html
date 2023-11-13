@@ -13,18 +13,18 @@
 
     <div>
         <label for="lastname">Last Name</label>
-        <input id="lastname" name="lastname" type="text" ngModel minlength="3" maxlength="25" #lastname="ngModel">
-        <div *ngIf="lastname.isvalid &&(lastname.dirty || lastname.touched)" style="color: red;">
-            <div *ngIf="lastname.errors.minlength">
+        <input id="lastname" name="lastname" type="text" ngModel minlength="3" #lastname="ngModel">
+        <div *ngIf="lastname.invalid &&(lastname.dirty || lastname.touched)" style="color: red;">
+            <div *ngIf="lastname.value.length >10">
                 Last Name should be minimum 3 letters long
             </div>
-            <div *ngIf="lastname.errors.maxlength">
+            <!-- <div *ngIf="lastname.errors.maxlength">
                 Last Name should be max 25 letters long
-            </div>
+            </div> -->
 
-            </div>
         </div>
     </div>
+
 
     <div>
         <label for="email">Email</label>
