@@ -6,9 +6,9 @@ import { SimpleComponent } from './simple/simple.component';
 import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
-  {path:'demo',component:DemoComponent}
-  {path:'emp',component:EmpComponent}
-  {path:'simple',component:SimpleComponent}
+  {path:'demo',component:DemoComponent},
+  {path:'emp',component:EmpComponent},
+  {path:'simple',component:SimpleComponent},
   {path:'register',component:RegisterComponent}
 ];
 
