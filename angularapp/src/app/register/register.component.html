@@ -5,4 +5,21 @@
         <label for="firstname">First Name</label>
         <input id="firstname" name="firstname" type="text" ngModel>
     </div>
+
+    <div>
+        <label for="lastname">Last Name</label>
+        <input id="lastname" name="lastname" type="text" ngModel>
+    </div>
+
+    <div>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="text" ngModel>
+    </div>
+
+    <div>
+        <label>Gender</label>
+        <input type="radio" name="gender" value="male" checked [(ngModel)]="gender">Male
+        <input type="radio" name="gender" value="female" [(ngModel)]="gender">Female
+
+    </div>
 </form>
