@@ -3,13 +3,27 @@
 <form #stdForm="ngForm" (ngSubmit)="RegisterStudent(stdForm)">
     <div>
         <label for="firstname">First Name</label>
-        <input id="firstname" name="firstname" type="text" ngModel required>
-        
+        <input id="firstname" name="firstname" type="text" ngModel required #firstname="ngModel">
+        <div *ngIf="firstname.invalid &&(firstname.dirty || firstname.touched)" style="color:red;">
+            <div *ngIf="firstname.errors.required">
+                Name is required
+            </div>
+        </div>
     </div>
 
     <div>
         <label for="lastname">Last Name</label>
-        <input id="lastname" name="lastname" type="text" ngModel>
+        <input id="lastname" name="lastname" type="text" ngModel minlength="3" maxlength="25" #lastname="ngModel">
+        <div *ngIf="lastname.isvalid &&(lastname.dirty || lastname.touched)" style="color: red;">
+            <div *ngIf="lastname.errors.minlength">
+                Last Name should be minimum 3 letters long
+            </div>
+            <div *ngIf="lastname.errors.maxlength">
+                Last Name should be max 25 letters long
+            </div>
+
+            </div>
+        </div>
     </div>
 
     <div>
