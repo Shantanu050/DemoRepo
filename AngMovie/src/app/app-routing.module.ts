@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
-
-const routes: Routes = [];
+import { FindmovieComponent } from './findmovie/findmovie.component';
+import { ListMovieComponent } from './list-movie/list-movie.component';
+const routes: Routes = [
+  {path:'listmovies',component:ListMovieComponent},
+  {path:'find/:id',component:FindmovieComponent}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

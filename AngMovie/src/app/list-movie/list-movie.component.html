@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <h1 class="text-danger">Movie List</h1>
+    <table class="table">
+        <thead>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Year Release</th>
+            <th>Ratings</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of moviedata">
+            <td>{{m.id}}</td>
+            <td>{{m.name}}</td>
+            <td>{{m.yearRelease}}</td>
+            <td>{{m.rating}}</td>
+            <td>
+                <a [routerLink]="['/find',m.id]">Details</a>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
