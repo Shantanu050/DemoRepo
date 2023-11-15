@@ -48,7 +48,7 @@ namespace MovieApp.Controllers
         }
         [HttpGet]
         [Route("ListMovies")]
-        [Authorize]
+
         public IActionResult Get()
         {
             //var data=context.Details.ToList();
