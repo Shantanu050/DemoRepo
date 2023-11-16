@@ -1,1 +1,22 @@
-<p>addmovie works!</p>
+<h2>Adding Movie</h2>
+<hr> 
+<form (ngSubmit)="SaveData(moviedata)" #movieform="ngForm">
+    <div>
+        <label for="name">Movie Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter movie name" [(ngModel)]="moviedata.name"
+        required #name="ngModel">
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter rating" [(ngModel)]="moviedata.rating"
+         #rating="ngModel">
+    </div>
+    <div>
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year" placeholder="Enter year" [(ngModel)]="moviedata.yearRelease"
+        required #yearRelease="ngModel">
+    </div>
+    <input type="submit" class="btn btn-"
+    
+
+</form>
