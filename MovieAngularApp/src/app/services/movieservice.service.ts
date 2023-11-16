@@ -23,4 +23,14 @@ private url='https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.e
   {
     return this.http.post<IMovie>(this.url+'/AddMovie',moviedata,this.httpOptions)
   }
+
+  editMovie(moviedata:IMovie):Observable<IMovie>
+  {
+    return this.http.put<IMovie>(this.url+'/EditMovie/'+moviedata.id,moviedata,this.httpOptions)
+  }
+
+  deleteMovie(id:number):Observable<IMovie>
+  {
+    return this.http.delete<IMovie>(this.url+'/Delete/'+id)
+  }
 }
