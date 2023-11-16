@@ -14,6 +14,7 @@ moviedata:any[]=[]
   constructor(private service:MovieserviceService) 
   {
     this.service.getAllMovies().subscribe(data=>{this.moviedata.push(...data)})
+    console.log(this.moviedata)
   }
 
   ngOnInit() {
