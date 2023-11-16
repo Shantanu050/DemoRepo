@@ -11,13 +11,15 @@ export class FindmovieComponent implements OnInit {
 
   moviedata:IMovie
   id:number
-  constructor(private ms:MovieserviceService,private ar:ActivatedRoute) { }
-
-  ngOnInit() {
+  constructor(private ms:MovieserviceService,private ar:ActivatedRoute) {
     const tid=this.ar.snapshot.paramMap.get('id')
     this.id=Number(tid)
     this.ms.getMovie(this.id).subscribe((data:IMovie)=>
     this.moviedata=data)
+   }
+
+  ngOnInit() {
+  
   }
 
 }
