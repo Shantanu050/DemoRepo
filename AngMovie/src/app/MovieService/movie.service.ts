@@ -18,4 +18,5 @@ private url='https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.e
   {
     return this.httpClient.get<IMovie>(this.url+'/ListMovies/'+id)
   }
+  
 }

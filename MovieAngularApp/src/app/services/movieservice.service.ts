@@ -17,4 +17,10 @@ private url='https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.e
   {
    return this.http.get<IMovie>(this.url+'/ListMovies/'+id)
   }
+
+  httpOptions={headers:new HttpHeaders({'Content-type':'application/json'})}
+  addMovie(moviedata:IMovie):Observable<IMovie>
+  {
+    return this.http.post<IMovie>(this.url+'/AddMovie',moviedata,this.httpOptions)
+  }
 }
