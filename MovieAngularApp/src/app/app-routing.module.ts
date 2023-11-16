@@ -11,7 +11,7 @@ const routes: Routes = [
   {path:'listmovies',component:ListmovieComponent},
   {path:'find/:id',component:FindmovieComponent},
   {path:'add',component:AddmovieComponent},
-  {path:'edit',component:EditmovieComponent},
+  {path:'edit/:id',component:EditmovieComponent},
   {path:'delete/:id',component:DeletemovieComponent},
 ];
 

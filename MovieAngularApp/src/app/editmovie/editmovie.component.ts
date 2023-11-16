@@ -14,14 +14,23 @@ export class EditmovieComponent implements OnInit {
   id:number
 getMovie(id:number)
 { 
-  
+  this.ms.getMovie(id).subscribe((data:IMovie)=>this.moviedata=data)
+}
 
+EditData(movie :IMovie)
+{
+  this.moviedata=movie
+  this.ms.editMovie(this.moviedata).subscribe(()=>
+  {
+    alert('Edited')
+    this.route.navigate(['/listmovies'])
+  })
 }
   ngOnInit()
    {
     const tid=this.ar.snapshot.paramMap.get('id')
     this.id=Number(tid)
-
+    this.getMovie(this.id)
   }
 
 }
