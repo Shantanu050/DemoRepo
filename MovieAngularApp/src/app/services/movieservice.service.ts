@@ -9,4 +9,12 @@ export class MovieserviceService {
 private url='https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie';
 
   constructor(private http:HttpClient) { }
+  getAllMovies():Observable<any[]>
+  {
+    return this.http.get<any[]>(this.url+'/ListMovies')
+  }
+  getMovie(id:number):Observable<IMovie>
+  {
+   return this.http.get<IMovie>(this.url+'/ListMovies/'+id)
+  }
 }
