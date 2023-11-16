@@ -9,6 +9,7 @@ import { MenuComponent } from './menu/menu.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditmovieComponent } from './editmovie/editmovie.component';
+import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +17,8 @@ import { EditmovieComponent } from './editmovie/editmovie.component';
     FindmovieComponent,
     MenuComponent,
     AddmovieComponent,
-    EditmovieComponent
+    EditmovieComponent,
+    DeletemovieComponent
   ],
   imports: [
     BrowserModule,
