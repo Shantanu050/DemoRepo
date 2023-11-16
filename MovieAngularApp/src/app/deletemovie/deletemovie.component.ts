@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieserviceService } from '../services/movieservice.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-deletemovie',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DeletemovieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ms:MovieserviceService,private ar:ActivatedRoute,private route:Router) { 
+    const tid= this.ar.snapshot.paramMap.get('id')
+    
+
+  }
 
   ngOnInit() {
   }
