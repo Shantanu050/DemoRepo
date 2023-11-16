@@ -1,1 +1,26 @@
-<p>deletemovie works!</p>
+<h2>Deleting Movie</h2>
+<hr> 
+<form (ngSubmit)="DeleteData(moviedata)" #movieform="ngForm">
+    <div>
+        <label for="id">ID</label>
+        <input type="text" id="id" name="id" readonly [(ngModel)]="moviedata.id">
+    </div>
+    <div>
+        <label for="name">Movie Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter movie name"  readonly [(ngModel)]="moviedata.name"
+        required #name="ngModel">
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter rating" readonly [(ngModel)]="moviedata.rating"
+         #rating="ngModel" min="1" max="3">
+    </div>
+    <div>
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year" placeholder="Enter year" readonly [(ngModel)]="moviedata.yearRelease"
+        required #yearrelease="ngModel">
+    </div>
+    <input type="submit" class="btn btn-danger" value="Delete Movie" [disabled]="!movieform.valid">
+    
+
+</form>
