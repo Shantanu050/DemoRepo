@@ -7,6 +7,7 @@ import { ListmovieComponent } from './listmovie/listmovie.component';
 import { FindmovieComponent } from './findmovie/findmovie.component';
 import { MenuComponent } from './menu/menu.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,9 @@ import { AddmovieComponent } from './addmovie/addmovie.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
