@@ -1,6 +1,6 @@
 <h2>Editing Movie</h2>
 <hr> 
-<form (ngSubmit)="saveData(moviedata)" #movieform="ngForm">
+<form (ngSubmit)="EditData(moviedata)" #movieform="ngForm">
     <div>
         <label for="id">ID</label>
         <input type="text" id="id" name="id" readonly [(ngModel)]="moviedata.id">
@@ -20,7 +20,7 @@
         <input type="text" id="year" name="year" placeholder="Enter year" [(ngModel)]="moviedata.yearrelease"
         required #yearrelease="ngModel">
     </div>
-    <input type="submit" class="btn btn-primary" value="Add Movie" [disabled]="!movieform.valid">
+    <input type="submit" class="btn btn-primary" value="Edit Movie" [disabled]="!movieform.valid">
     
 
 </form>

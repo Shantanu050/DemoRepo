@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EditmovieComponent implements OnInit {
 
   constructor(private ms:MovieserviceService,private route:Router,private ar:ActivatedRoute) { }
-  moviedata:IMovie={id:0,name:'',rating:0,yearrelease:0}
+  moviedata:IMovie
   id:number
 getMovie(id:number)
 { 
