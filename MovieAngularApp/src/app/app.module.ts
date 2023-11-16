@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import { ListmovieComponent } from './listmovie/listmovie.component';
 import { FindmovieComponent } from './findmovie/findmovie.component';
 @NgModule({
@@ -14,7 +14,7 @@ import { FindmovieComponent } from './findmovie/findmovie.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClient
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
