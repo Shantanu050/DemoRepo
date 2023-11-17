@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.Extensions.Logging;
-//using Microsoft.IdentityModel.Tokens.Jwt;
+using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
-
 using System.Text;
+
 
 namespace jwt.Controllers
 {
@@ -18,6 +18,7 @@ namespace jwt.Controllers
     [Route("[controller]")]
     public class AuthController : ControllerBase
     {
+        
        [HttpPost]
        public IActionResult Login([FromBody] LoginModel user)
        {
@@ -32,10 +33,10 @@ namespace jwt.Controllers
             audience:"http://0.0.0.0:8080",
             claims:new List<Claim>(),
             expires:DateTime.Now.AddMinutes(10),
-            signinCredentials:signinCredentials
+            signingCredentials:signinCredentials
            );
            var tokenString=new JwtSecurityTokenHandler().WriteToken(tokenOptions);
-           return Ok(new AuthenticateResponse(Token=tokenString));
+           return Ok(new AuthenticateResponse{Token=tokenString});
         }
         return Unauthorized();
        }
