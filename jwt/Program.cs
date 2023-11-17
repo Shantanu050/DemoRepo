@@ -11,8 +11,22 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddAuthentication(opt=>{
-    opt.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme
+    opt.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
 })
+.AddJwtBearer(options=>
+{
+options.TokenValidationParameters=new TokenValidationParameters
+{
+ValidateIssuer=true,
+ValidateAudience=true,
+ValidateLifetime=true,
+ValidateIssuerSigningKey=true,
+ValidIssuer="http://0.0.0.0:8080",
+ValidAudience="http://0.0.0.0:8080",
+IssuerSigningKey=new SymmetricSecurityKey(Encoding.UTF8.GetBytes("superSecretKey@345"))
+};
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
