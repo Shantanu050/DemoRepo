@@ -5,6 +5,8 @@ import { FindmovieComponent } from './findmovie/findmovie.component';
 import { AddmovieComponent } from './addmovie/addmovie.component';
 import { EditmovieComponent } from './editmovie/editmovie.component';
 import { DeletemovieComponent } from './deletemovie/deletemovie.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveformComponent } from './reactiveform/reactiveform.component';
 
 
 const routes: Routes = [
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path:'add',component:AddmovieComponent},
   {path:'edit/:id',component:EditmovieComponent},
   {path:'delete/:id',component:DeletemovieComponent},
+  {path:'reactForm',component:ReactiveformComponent},
+
 ];
 
 @NgModule({

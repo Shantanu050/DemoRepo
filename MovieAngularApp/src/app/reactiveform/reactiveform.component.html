@@ -1,0 +1,23 @@
+<h2>Adding Movie</h2>
+<hr>
+<form [formGroup]="movieform" (ngSubmit)="saveData()">
+<div class="container jumbotron "style="width:500px;">
+    <div class="form-group">
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" formControlName="name" class="form-control">
+        </div>
+    </div>
+    <div class="form-group">
+            <label for="year">Year</label>
+            <input type="text" id="year" name="year" formControlName="yearrelease" class="form-control">
+    </div>
+    <div class="form-group">
+            <label for="rating">Rating</label>
+            <input type="text" id="rating" name="rating" formControlName="rating" class="form-control">
+    </div>
+    <p>
+        <button type="submit" class="btn btn-info">Save</button>
+    </p>
+</div>
+</form>
