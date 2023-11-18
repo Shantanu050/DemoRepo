@@ -36,6 +36,6 @@ private detailUr="https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproj
   }
   addDetails(detailsdata:Idetails):Observable<Idetails>
   {
-    return this.http.put<Idetails>(this.detailUr+'/AddDetails',detailsdata,this.httpOptions)
+    return this.http.post<Idetails>(this.detailUr+'/AddDetails',detailsdata,this.httpOptions)
   }
 }

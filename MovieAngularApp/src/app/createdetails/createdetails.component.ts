@@ -18,6 +18,7 @@ showdata:any[]=[]
 saveData(data:Idetails):void
 {
   this.detailsdata=data
+  console.log(this.detailsdata)
   this.ms.addDetails(this.detailsdata).subscribe(()=>
   {
     alert('Record Added')

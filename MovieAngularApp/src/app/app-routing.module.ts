@@ -7,7 +7,7 @@ import { EditmovieComponent } from './editmovie/editmovie.component';
 import { DeletemovieComponent } from './deletemovie/deletemovie.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ReactiveformComponent } from './reactiveform/reactiveform.component';
-
+import { CreatedetailsComponent } from './createdetails/createdetails.component';
 
 const routes: Routes = [
   {path:'listmovies',component:ListmovieComponent},
@@ -16,7 +16,7 @@ const routes: Routes = [
   {path:'edit/:id',component:EditmovieComponent},
   {path:'delete/:id',component:DeletemovieComponent},
   {path:'reactForm',component:ReactiveformComponent},
-  {path:'adddetails',component.CreatedetailsComponent}
+  {path:'details',component:CreatedetailsComponent}
 
 ];
 

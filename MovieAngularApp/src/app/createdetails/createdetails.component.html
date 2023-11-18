@@ -1,26 +1,27 @@
 <h2>Adding Details</h2>
 <hr> 
+<div class="container jumbotron">
 <form (ngSubmit)="saveData(detailsdata)" #movieform="ngForm">
-    <div>
+    <div class="form-group">
         <label for="actor">Actor Name</label>
         <input type="text" id="actor" name="actor" placeholder="Enter actor name" [(ngModel)]="detailsdata.actor"
          #actor="ngModel" class="form-control">
     </div>
 
-    <div>
+    <div  class="form-group">
         <label for="movieid">Movie Id</label>
        <select id="movieid" name="movieid" [(ngModel)]="detailsdata.movieid" class="form-control">
         <option *ngFor="let m of showdata" [value]="m.id">{{m.name}}</option>
        </select>
     </div>
 
-    <div>
+    <div  class="form-group">
         <label for="gender">Gender</label>
         <input type="text" id="gender" name="gender" placeholder="Enter gender" [(ngModel)]="detailsdata.gender"
         required #gender="ngModel" class="form-control">
     </div>
 
-    <div>
+    <div  class="form-group">
         <label for="role">Select Role</label>
         <select id="role" name="role" [(ngModel)]="detailsdata.role" class="form-control">
             <option value="Hero">Hero</option>
@@ -33,3 +34,5 @@
     
 
 </form>
+</div>
+
