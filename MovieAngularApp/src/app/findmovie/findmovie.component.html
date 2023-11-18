@@ -4,3 +4,8 @@
 <p><b>Name</b></p> &nbsp;&nbsp;&nbsp;{{moviedata.name}}
 <p><b>Year Release</b></p> &nbsp;&nbsp;&nbsp;{{moviedata.yearRelease}}
 <p><b>Rating</b></p> &nbsp;&nbsp;&nbsp;{{moviedata.rating}}
+<br>
+<a [routerLink]="['/listmovies']" > Back to List</a>
+<br>
+<br>
+<input type="button" (click)="Show()" value="Show Movies">
