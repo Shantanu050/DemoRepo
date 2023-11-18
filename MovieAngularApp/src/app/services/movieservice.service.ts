@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import {HttpClient,HttpHeaders} from '@angular/common/http'
 import {IMovie} from '../model/imovie'
 import { Observable } from 'rxjs';
+import { Idetails } from '../model/idetails';
 @Injectable({
   providedIn: 'root'
 })
 export class MovieserviceService {
 private url='https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Movie';
-
+private detailUr="https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.examly.io/Detail"
   constructor(private http:HttpClient) { }
   getAllMovies():Observable<any[]>
   {
@@ -32,5 +33,9 @@ private url='https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproject.e
   deleteMovie(id:number):Observable<IMovie>
   {
     return this.http.delete<IMovie>(this.url+'/Delete/'+id)
+  }
+  addDetails(detailsdata:Idetails):Observable<Idetails>
+  {
+    return this.http.put<Idetails>(this.detailUr+'/AddDetails',detailsdata,this.httpOptions)
   }
 }
