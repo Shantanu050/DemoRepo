@@ -3,7 +3,7 @@ import {HttpClient,HttpErrorResponse,HttpHeaders} from '@angular/common/http'
 import {IMovie} from '../model/imovie'
 import { Observable } from 'rxjs';
 import { Idetails } from '../model/idetails';
-import{catchError} from 'rxjs/operators';
+import{catchError, retry} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 
 @Injectable({
@@ -44,6 +44,8 @@ private detailUr="https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproj
 
   handleError(error:HttpErrorResponse)
   {
-    var errmsg=error.status+'\n'
+    var errmsg=error.status+'\n'+error.statusText+'\n'+error.error
+    alert(errmsg)
+    return throwError(errmsg)
   }
 }

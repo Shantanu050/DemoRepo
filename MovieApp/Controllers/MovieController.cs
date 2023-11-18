@@ -67,7 +67,7 @@ namespace MovieApp.Controllers
             var data=(from m in context.Movies where m.Id==id select m).FirstOrDefault();
             if(data==null)
             {
-                return NotFound($"Movie {id} not found");
+                return NotFound($"Movie {id} not found in the list");
             }
             return Ok(data);
         }
