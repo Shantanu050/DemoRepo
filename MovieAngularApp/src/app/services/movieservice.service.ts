@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpHeaders} from '@angular/common/http'
+import {HttpClient,HttpErrorResponse,HttpHeaders} from '@angular/common/http'
 import {IMovie} from '../model/imovie'
 import { Observable } from 'rxjs';
 import { Idetails } from '../model/idetails';
+import{catchError} from 'rxjs/operators';
+import {throwError} from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -16,7 +19,7 @@ private detailUr="https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproj
   }
   getMovie(id:number):Observable<IMovie>
   {
-   return this.http.get<IMovie>(this.url+'/ListMovies/'+id)
+   return this.http.get<IMovie>(this.url+'/ListMovies/'+id).pipe(catchError(this.handleError));
   }
 
   httpOptions={headers:new HttpHeaders({'Content-type':'application/json'})}
@@ -27,15 +30,20 @@ private detailUr="https://8080-bfebfcbdbbfabcaaaceeafebeccaddbefddaf.premiumproj
 
   editMovie(moviedata:IMovie):Observable<IMovie>
   {
-    return this.http.put<IMovie>(this.url+'/EditMovie/'+moviedata.id,moviedata,this.httpOptions)
+    return this.http.put<IMovie>(this.url+'/EditMovie/'+moviedata.id,moviedata,this.httpOptions).pipe(catchError(this.handleError));
   }
 
   deleteMovie(id:number):Observable<IMovie>
   {
-    return this.http.delete<IMovie>(this.url+'/Delete/'+id)
+    return this.http.delete<IMovie>(this.url+'/Delete/'+id).pipe(catchError(this.handleError));
   }
   addDetails(detailsdata:Idetails):Observable<Idetails>
   {
     return this.http.post<Idetails>(this.detailUr+'/AddDetails',detailsdata,this.httpOptions)
+  }
+
+  handleError(error:HttpErrorResponse)
+  {
+    var errmsg=error.status+'\n'
   }
 }
