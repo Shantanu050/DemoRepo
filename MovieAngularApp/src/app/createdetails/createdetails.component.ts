@@ -10,11 +10,22 @@ import { IMovie } from '../model/imovie';
   styleUrls: ['./createdetails.component.css']
 })
 export class CreatedetailsComponent implements OnInit {
-detailsdata:Idetails={detailId:0,actor:'',movieId:0,gender:'',n}
-showmovies:IMovie[]=[]
-  constructor(private ms:MovieserviceService, private route:Router) { }
+detailsdata:Idetails={detailId:0,actor:'',movieId:0,gender:'',role:''}
+showdata:any[]=[]
+  constructor(private ms:MovieserviceService, private route:Router) {
 
+   }
+saveData(data:Idetails):void
+{
+  this.detailsdata=data
+  this.ms.addDetails(this.detailsdata).subscribe(()=>
+  {
+    alert('Record Added')
+    this.route.navigate(['/listmovies'])
+  })
+}
   ngOnInit() {
+    this.ms.getAllMovies().subscribe(data=>{this.showdata.push(...data)})
   }
 
 }

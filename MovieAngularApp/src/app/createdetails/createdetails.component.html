@@ -1,1 +1,22 @@
-<p>createdetails works!</p>
+<h2>Adding Details</h2>
+<hr> 
+<form (ngSubmit)="saveData(detailsdata)" #movieform="ngForm">
+    <div>
+        <label for="name">Movie Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter movie name" [(ngModel)]="moviedata.name"
+        required #name="ngModel">
+    </div>
+    <div>
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating" placeholder="Enter rating" [(ngModel)]="moviedata.rating"
+         #rating="ngModel" min="1" max="3">
+    </div>
+    <div>
+        <label for="year">Year</label>
+        <input type="text" id="year" name="year" placeholder="Enter year" [(ngModel)]="moviedata.yearrelease"
+        required #yearrelease="ngModel">
+    </div>
+    <input type="submit" class="btn btn-primary" value="Add Movie" [disabled]="!movieform.valid">
+    
+
+</form>
