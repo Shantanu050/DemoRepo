@@ -15,6 +15,7 @@
         <label for="year">Year</label>
         <input type="text" id="year" name="year" placeholder="Enter year" [(ngModel)]="moviedata.yearrelease"
         required #yearrelease="ngModel">
+        <div *ngIf=""
     </div>
     <input type="submit" class="btn btn-primary" value="Add Movie" [disabled]="!movieform.valid">
     
