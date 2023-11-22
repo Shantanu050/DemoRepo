@@ -18,7 +18,7 @@ export class EmpComponent implements OnInit {
     email:['',Validators.email],
     city:['',Validators.pattern("[a-zA-Z]")]
   })
-  Save():void{
+  Save(form:FormGroup):void{
     console.log(this.empform.value)
   }
   // empform=this.formbuilder.group({
