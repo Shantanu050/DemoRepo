@@ -13,9 +13,9 @@ export class ReactiveformComponent implements OnInit {
 moviedata:IMovie
   constructor(private fb:FormBuilder,private ms:MovieserviceService,private route:Router) { }
 movieform=this.fb.group({
-name:['',Validators.required],
-yearrelease:['',[Validators.required,Validators.min(2000),Validators.max(2023)]],
-rating:['',[Validators.required,Validators.min(1),Validators.max(5)]]
+name:[''],
+yearrelease:[''],
+rating:['']
 }
 )
 saveData():void
