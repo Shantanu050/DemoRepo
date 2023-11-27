@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ReactiveformComponent implements OnInit {
 moviedata:IMovie
-  constructor(private fb:FormBuilder,private ms:MovieserviceService,private route:Router) { }
+constructor(private fb:FormBuilder,private ms:MovieserviceService,private route:Router) { }
 movieform=this.fb.group({
 name:[''],
 yearrelease:[''],
