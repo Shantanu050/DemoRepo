@@ -11,6 +11,7 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
 using System.Collections;
+using System.Text.Encoding;
 namespace jwtapi.Controllers
 {
     [ApiController]
@@ -56,6 +57,23 @@ namespace jwtapi.Controllers
         private string CreateJwt(User user)
         {
             var jwtTokenHandler=new JwtSecurityTokenHandler();
+            var key=Encoding.ASCII.GetBytes("LTIM");
+            var identify=new ClaimsIdentity(new Claim[]
+            {
+               new Claim(ClaimsType.Role,user.Role),
+               new Claim(ClaimsType.Name,$"(user.Username)")
+
+            });
+            var credentials=new SigningCredentials(new SymmetricSecurityKey(key),
+            SecurityAlgorithms.HmacSha256);
+            var tokenDescriptor=new SecurityTokenDescriptor
+            {
+                Subject=identity,
+                Expires=DateTime.Now.AddDays(2),
+                SigningCredentials=credentials
+
+            };
+            var token=jwtTokenHandler.CreateRefreshToken
 
         }
     }
