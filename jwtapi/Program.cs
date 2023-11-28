@@ -23,6 +23,9 @@ builder.Services.AddDbContext<AppdContext>(options=>{options.UseSqlServer(builde
 });
 builder.Services.AddAuthentication(x=>{
     x.DefaultAuthenticateScheme=JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme=JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(x=>{
+
     x.RequireHttpsMetadata=false;
     x.SaveToken=true;
     x.TokenValidationParameters=new TokenValidationParameters{
@@ -33,6 +36,7 @@ builder.Services.AddAuthentication(x=>{
         ClockSkew=TimeSpan.Zero
     };
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
