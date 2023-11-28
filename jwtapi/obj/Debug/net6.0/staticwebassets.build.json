@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ywdDIBLu8ZYezzuwYd+t43FVXAWnW5HY2CkpfMKnuIg=",
+  "Source": "jwtapi",
+  "BasePath": "_content/jwtapi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
