@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using jwtapi.Models;
 using System.Text.RegularExpressions;
-using System.IdentityModel.Tokens.Jwt;
-using System.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
@@ -21,10 +19,12 @@ using System.Text;
 using Microsoft.EntityFrameworkCore;
 using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
-using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.IdentityModel.Tokens.Jwt;
 using System.Security.Cryptography;
 using System.Security.Claims;
 using jwtapi.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace jwtapi.Controllers
 {
@@ -63,7 +63,7 @@ namespace jwtapi.Controllers
             //if any other validation 
             userObj.Role="user";
             userObj.Token="";
-            await _authContext.Users.AddAsync(userObj);
+            await _authContext.AddAsync(userObj);
             await _authContext.SaveChanges();
             return Ok(new {Status=200,Message="User Added"});
 
@@ -72,10 +72,10 @@ namespace jwtapi.Controllers
         {
             var jwtTokenHandler=new JwtSecurityTokenHandler();
             var key=Encoding.ASCII.GetBytes("LTIM");
-            var identify=new ClaimsIdentity(new Claim[]
+            var identity=new ClaimsIdentity(new Claim[]
             {
-               new Claim(ClaimsType.Role,user.Role),
-               new Claim(ClaimsType.Name,$"(user.Username)")
+               new Claim(ClaimsTypes.Role,user.Role),
+               new Claim(ClaimsTypes.Name,$"{user.Username}")
 
             });
             var credentials=new SigningCredentials(new SymmetricSecurityKey(key),
