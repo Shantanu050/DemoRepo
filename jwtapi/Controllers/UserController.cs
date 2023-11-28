@@ -74,7 +74,7 @@ namespace jwtapi.Controllers
         private string CreateJwt(User user)
         {
             var jwtTokenHandler=new JwtSecurityTokenHandler();
-            var key=Encoding.ASCII.GetBytes("ltimindtree...");
+            var key=Encoding.ASCII.GetBytes("l");
             var identity=new ClaimsIdentity(new Claim[]
             {
                 new Claim(ClaimTypes.Role,user.Role),
