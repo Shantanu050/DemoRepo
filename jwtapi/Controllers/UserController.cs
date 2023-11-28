@@ -1,17 +1,18 @@
+
+//-------------------------
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using jwtapi.Models;
-using System.Text.RegularExpressions;
-using System.IdentityModel.Tokens.Jwt;
-using System.IdentityModel.Tokens;
-using System.Security.Claims;
-using System.Security.Cryptography;
+using System.Text;
 using Microsoft.EntityFrameworkCore;
-using System.Collections;
-using System.Text.Encoding;
+using System.Text.RegularExpressions;
+using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Cryptography;
+using System.Security.Claims;
+using jwtapi.Models;
 namespace jwtapi.Controllers
 {
     [ApiController]
@@ -51,7 +52,7 @@ namespace jwtapi.Controllers
             userObj.Token="";
             await _authContext.Users.AddAsync(userObj);
             await _authContext.SaveChanges();
-            return Ok(new {Status=200,Message="USer Added"});
+            return Ok(new {Status=200,Message="User Added"});
 
         }
         private string CreateJwt(User user)
@@ -73,9 +74,27 @@ namespace jwtapi.Controllers
                 SigningCredentials=credentials
 
             };
-            var token=jwtTokenHandler.CreateRefreshToken
+            var token=jwtTokenHandler.CreateTokent(tokenDescriptor);
+            return jwtTokenHandler.WriteToken(token);
 
         }
+        private string CreateRefreshToken()
+        {
+            var tokenBytes=RandomNumberGenerator.GetBytes(64);
+            var refreshtoken=Convert.ToBase64String(tokenBytes);
+            var tokenUser=_authContext.Users.Any(a=>a.RefreshToken==refreshtoken);
+            if(tokenUser)
+            {
+                return CreateRefreshToken();
+            }
+            return refreshtoken;
+        }
+        [HttpGet]
+        public async Task<ActionResult<User>> GetAllUsers()
+        {
+            return Ok(await _authContext.Users.ToListAsync());
+        }
+        
     }
     
 }
