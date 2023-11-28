@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using jwtapi.Models;
 using System.Text.RegularExpressions;
 using System.IdentityModel.Tokens.Jwt;
+using System.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using Microsoft.EntityFrameworkCore;
@@ -32,13 +33,31 @@ namespace jwtapi.Controllers
          }
          user.Token=CreateJwt(user);
          var newAccessToken=user.Token;
-         user.RefreshToken=CreateRefreshToken();
+         var newRefreshToken=CreateRefreshToken();
          user.RefreshTokenExpiryTime=DateTime.Now.AddDays(2);
-         await _authContext.SaveChanges();
+         await _authContext.SaveChangesAsync();
          return Ok(new TokenApi(){
             AccessToken=newAccessToken,
-            RefreshToken=
-         }
+            RefreshToken=newRefreshToken
+         });
+        }
+        [HttpPost("register")]
+        public async Task<IActionResult> AddUser([FromBody] User userObj)
+        {
+            if(userObj==null) return BadRequest();
+            //if any other validation 
+            userObj.Role="user";
+            userObj.Token="";
+            await _authContext.Users.AddAsync(userObj);
+            await _authContext.SaveChanges();
+            return Ok(new {Status=200,Message="USer Added"});
+
+        }
+        private string CreateJwt(User user)
+        {
+            var jwtTokenHandler=new JwtSecurityTokenHandler();
+
         }
     }
+    
 }
