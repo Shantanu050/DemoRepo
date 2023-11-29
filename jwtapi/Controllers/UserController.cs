@@ -34,7 +34,7 @@ namespace jwtapi.Controllers
             {
                 return BadRequest();
             }
-            var user=await _authContext.Users.FirstOrDefaultAsync(x=> x.UserName==userObj.UserName);
+            var user=await _authContext.Users.FirstOrDefaultAsync(x=> x.UserName==userObj.UserName);//similar for password
             if(user==null)
             {
                 return NotFound(new{Message="User Not Found"});
@@ -74,7 +74,7 @@ namespace jwtapi.Controllers
         private string CreateJwt(User user)
         {
             var jwtTokenHandler=new JwtSecurityTokenHandler();
-            var key=Encoding.ASCII.GetBytes("l");
+            var key=Encoding.ASCII.GetBytes("1234567898765432");
             var identity=new ClaimsIdentity(new Claim[]
             {
                 new Claim(ClaimTypes.Role,user.Role),
